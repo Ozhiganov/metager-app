@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+    <head>
+      <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="style/index.css" />
+    		<link rel="stylesheet" href="style/material-default.css"/>
+    		<link href="style/font-awesome.min.css" rel="stylesheet"/>
+        <title>MetaGer</title>
+        <script type="text/javascript" async="defer" src="cordova.js"></script>
+        <script type="text/javascript" defer="defer" src="app/index.js"></script>
+    </head>
+    <body>
+      <h1 class="logo">MetaGer</h1>
+      <select class="focus-list card elevation-1" name="focus" form="searchform">
+        <option value="web">🌐 Web</option>
+      </select>
+      <form class="search-card card elevation-2" action="results.xhtml" method="get" id="searchform">
+        <a href="#" class="back">
+          <img src="img/Logo-square-inverted.svg" alt="MetaGer" title="MetaGer, die sichere Suchmaschine"/>
+        </a>
+        <input type="text" id="search-input" name="eingabe" placeholder="MetaGer-Suche" class="query-input"/>
+        <button type="submit" class="search-button fa"></button>
+      </form>
+      <footer class="footer-text">
+      MetaGer wird entwickelt und betrieben vom SUMA-EV - Verein für freien Wissenszugang.
+      </footer>
+    </body>
+</html>
