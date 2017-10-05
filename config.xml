@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="de.metager.app" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MetaGer App</name>
+<widget id="de.metager.metagerapp" version="3.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>MetaGer Suche</name>
     <description>
-        MetaGer App
+        MetaGer Suche
     </description>
     <author email="office@suma-ev.de" href="https://suma-ev.de">
         SUMA-EV
