@@ -27,10 +27,18 @@ stages:
   - build
   - test
 
-build:
+build-android:
   stage: build
   script:
     - cordova build android
   artifacts:
     paths:
     - platforms/android/build/outputs
+    
+build-browser:
+  stage: build
+  script:
+    - cordova build android
+  artifacts:
+    paths:
+    - platforms/browser/build/
