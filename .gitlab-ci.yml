@@ -42,4 +42,4 @@ build-android:
     - cordova build android
   artifacts:
     paths:
-    - platforms/android/build/outputs
+    - platforms/android/build/www
