@@ -23,7 +23,7 @@ build-browser:
     - cordova build browser
   artifacts:
     paths:
-    - platforms/browser/build/
+    - platforms/browser/www/
 
 build-android:
   stage: build
@@ -42,4 +42,4 @@ build-android:
     - cordova build android
   artifacts:
     paths:
-    - platforms/android/build/www
+    - platforms/android/build/outputs/
