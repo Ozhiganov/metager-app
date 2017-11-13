@@ -12,5 +12,20 @@
         <script type="text/javascript" defer="defer" src="app/results.js"></script>
     </head>
     <body onload="boot()">
+			<header class="persistent-search">
+    			<form class="search-card card elevation-2" id="searchform">
+    				<a href="index.xhtml" class="back">
+    					<img src="img/Logo-square-inverted.svg" alt="MetaGer" title="MetaGer, die sichere Suchmaschine"/>
+    				</a>
+    				<input type="text" name="eingabe" placeholder="MetaGer-Suche" value="" class="query-input" disabled="disabled"/>
+    				<button type="submit" class="search-button fa"></button>
+    			</form>
+			</header>
+  		<main class="results-container">
+				<progress class="resultpage-progress" title="Suche wird durchgeführt…"/>
+  		</main>
+  		<footer class="footer-text">
+    		MetaGer wird entwickelt und betrieben vom SUMA-EV - Verein für freien Wissenszugang.
+  		</footer>
     </body>
 </html>
