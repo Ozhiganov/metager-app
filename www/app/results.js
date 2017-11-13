@@ -12,7 +12,8 @@ return xhttp.responseXML;
 function render(err, content)
 {
 	if (err) {
-
+		alert("Fehler bei der Suche! Bitte prüfen Sie Ihr Netzwerk.");
+		location.href="index.xhtml";
 	} else {
 	  style = loadXMLDoc("style/material.xsl");
 	  if (document.implementation && document.implementation.createDocument)
