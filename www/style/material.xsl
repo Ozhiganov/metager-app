@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xsl:stylesheet version="1.0"
-xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2005/Atom"
-     xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns="http://www.w3.org/1999/xhtml">
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"
+	xmlns:ad="http://a9.com/-/opensearch/extensions/advertisement/1.0/"
+	xmlns="http://www.w3.org/1999/xhtml">
 
   <xsl:template match="/">
     <xsl:apply-templates/>
@@ -20,7 +23,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2
     			</form>
 				</header>
     		<main class="results-container">
-          <xsl:apply-templates select="atom:entry"/>
+          <xsl:apply-templates select="atom:entry|ad:advertisement"/>
     		</main>
     		<footer class="footer-text">
     		MetaGer wird entwickelt und betrieben vom SUMA-EV - Verein für freien Wissenszugang.
@@ -28,19 +31,31 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2
 			</body>
   </xsl:template>
 
+	  <xsl:template match="atom:entry">
+	    <article class="search-result card elevation-1">
+	      <div class="result-content" onclick="openResult('{atom:link/@href}')">
+	                  <h1 class="result-title"><xsl:apply-templates select="atom:title"/></h1>
+	                  <h2 class="result-display-link"><xsl:apply-templates select="atom:link"/></h2>
+	                  <p class="result-description">
+	                    <xsl:apply-templates select="atom:content"/>
+	                  </p>
+	      </div>
+	      <div class="result-action-area">
+	                  <a class="result-action primary" href="{atom:link/@href}">Öffnen</a>
+	                  <a class="result-action primary" onclick="cordova.InAppBrowser.open('{atom:link/@href}', '_blank', 'location=yes,clearcache=yes,clearsessioncache=yes')" href="#">In-App</a>
+	      </div>
+	    </article>
+	  </xsl:template>
 
-    <xsl:template match="atom:entry">
-      <article class="search-result card elevation-1">
+    <xsl:template match="ad:advertisement">
+      <article class="search-result card elevation-1 ad-advertisement">
         <div class="result-content" onclick="openResult('{atom:link/@href}')">
-                    <h1 class="result-title"><xsl:apply-templates select="atom:title"/></h1>
-                    <h2 class="result-display-link"><xsl:apply-templates select="atom:link"/></h2>
-                    <p class="result-description">
-                      <xsl:apply-templates select="atom:content"/>
-                    </p>
-        </div>
-        <div class="result-action-area">
-                    <a class="result-action primary" href="{atom:link/@href}">Öffnen</a>
-                    <a class="result-action primary" onclick="cordova.InAppBrowser.open('{atom:link/@href}', '_blank', 'location=yes,clearcache=yes,clearsessioncache=yes')" href="#">In-App</a>
+					<small class="ad-callout"><xsl:apply-templates select="ad:callOut"/></small>
+          <h1 class="result-title"><xsl:apply-templates select="ad:title"/></h1>
+          <h2 class="result-display-link"><xsl:apply-templates select="ad:displayUrl"/></h2>
+          <p class="result-description">
+							<xsl:apply-templates select="ad:subTitle"/>
+          </p>
         </div>
       </article>
     </xsl:template>
