@@ -1,6 +1,9 @@
-MetaGer Such-App
+MetaGer search app
 
-Zum Bauen der App wird Apache Cordova benötigt. Genaue Anweisungen folgen.
+The official client application for the German search engine “MetaGer”.
+It is currently only available in German. Use Apache Cordova to build the app.
+
+This document is a work in progress.
 
 Copyright © SUMA-EV and contributors
 
