@@ -1,5 +1,5 @@
-const TRIES = 3;
-const TRYDELAYINCRMS = 1000;
+var TRIES = 3;
+var TRYDELAYINCRMS = 1000;
 
 function loadXMLDoc(filename)
 {
@@ -21,7 +21,7 @@ function render(err, content)
 	    xsltProcessor = new XSLTProcessor();
 	    xsltProcessor.importStylesheet(style);
 	    resultDocument = xsltProcessor.transformToFragment(content, document);
-	    document.body.replaceWith(resultDocument);
+	    document.body.replaceChild(resultDocument, document.getElementById("temp"));
 	    }
 	}
 }
@@ -32,7 +32,7 @@ function render(err, content)
 function search(query,focus,callback, trycount) {
   query = query || "eingabe=";
   focus = focus || "focus=web";
-	let doc;
+	var doc;
 	trycount = trycount || 0;
 	try {
 		doc = loadXMLDoc("https://metager3.de/meta/meta.ger3?"+focus+"&"+query+"&encoding=utf8&out=atom10&appversion=3.0.0");
@@ -53,9 +53,16 @@ function boot()
   search(getParameter('eingabe'),getParameter('focus'),render);
 }
 
+function filterFunc(p,i,a)
+{
+	return p.startsWith(parameterName + "=");
+}
+
 function getParameter(parameterName) {
-	const parameterStrings = location.search.substr(1).split("&");
-	const results = parameterStrings.filter((p, i, a) => p.startsWith(parameterName + "="));
+	var parameterStrings = location.search.substr(1).split("&");
+	var results = parameterStrings.filter(function(p,i,a) {
+  return p.startsWith(parameterName + "=");
+});
 	return results.join("&");
 }
 
