@@ -21,6 +21,7 @@
         <icon density="mdpi" src="res/icon/android/mdpi.png" />
         <icon density="hdpi" src="res/icon/android/hdpi.png" />
         <icon density="xhdpi" src="res/icon/android/xhdpi.png" />
+        <preference name="android-minSdkVersion" value="21" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
@@ -28,7 +29,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="android" spec="^6.2.3" />
+    <engine name="browser" spec="^5.0.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
-    <engine name="browser" spec="^5.0.0" />
 </widget>
