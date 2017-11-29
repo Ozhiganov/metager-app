@@ -61,7 +61,7 @@ function filterFunc(p,i,a)
 function getParameter(parameterName) {
 	var parameterStrings = location.search.substr(1).split("&");
 	var results = parameterStrings.filter(function(p,i,a) {
-  return p.startsWith(parameterName + "=");
+  return p.lastIndexOf(parameterName + "=", 0) === 0;
 });
 	return results.join("&");
 }
