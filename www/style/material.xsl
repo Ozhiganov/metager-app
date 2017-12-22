@@ -19,7 +19,7 @@
     					<img src="img/Logo-square-inverted.svg" alt="MetaGer" title="MetaGer, die sichere Suchmaschine"/>
     				</a>
     				<input type="text" name="eingabe" placeholder="MetaGer-Suche" value="{opensearch:Query[@role='request']/@searchTerms}" class="query-input"/>
-    				<button type="submit" class="search-button fa"></button>
+    				<button type="submit" class="search-button">🔍</button>
     			</form>
 				</header>
     		<main class="results-container">
