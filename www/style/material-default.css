@@ -71,7 +71,7 @@ input:focus {
 	border: none;
 	background: none;
 	margin: 0px;
-	padding: 0px;
+	padding: 5px 0px;
 }
 
 .search-card input[type=text] {
