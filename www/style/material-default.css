@@ -262,7 +262,11 @@ input:focus {
 	font-size: 36px;
 }
 
-@media (max-width: 330px) { /*for extra small mobile Viewports (i.e. iPhone 5S)*/
+.footer-text a {
+	color: hsl(0, 0%, 46%);
+}
+
+@media (max-width: 330px) { /*for extra small mobile viewports (i.e. iPhone 5S)*/
 	.result-action {
 	font-size: 13px;
 }
