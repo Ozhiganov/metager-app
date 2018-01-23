@@ -28,6 +28,7 @@ input:focus {
 	margin: 8px;
 	padding: 8px;
 	border-radius: 2px;
+	border: 1px solid hsl(0, 0%, 90%);
 	display: block;
 }
 .card-inline {
@@ -56,14 +57,14 @@ input:focus {
     top: 0px;
 		position: fixed;
     z-index: 100;
-    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, #FAFAFA 0%,#FAFAFA 50%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 100%);
     width: 100%;
     height: 46px;
 }
 
 .persistent-search .search-card {
 		position: fixed;
-		width: calc(100% - 32px);
+		width: calc(100% - 33px);
     z-index: 1000;
 }
 
@@ -261,7 +262,7 @@ input:focus {
 	font-size: 36px;
 }
 
-@media (max-width: 330px) { /*für sehr kleine mobile Viewports (z.B. iPhone 5S)*/
+@media (max-width: 330px) { /*for extra small mobile Viewports (i.e. iPhone 5S)*/
 	.result-action {
 	font-size: 13px;
 }
@@ -274,4 +275,43 @@ input:focus {
 	font-size: 20px;
 	padding: 12px;
 }
+}
+
+/* convertible styles (touch optimized desktop) */
+
+@media (min-width: 900px) {
+	body {
+		margin: 0px 60px;
+	}
+
+.results-container {
+	margin-top: 70px;
+}
+
+.elevation-1 {
+	box-shadow: none;
+}
+.elevation-2 {
+	box-shadow: 0px 1px 1.5px 0px rgba(0,0,0,0.12), 1px 0px 1px 0px rgba(0,0,0,0.24);
+}
+
+.card {
+	width: 600px;
+}
+
+.persistent-search .search-card {
+		width: 600px;
+	  margin: 8px;
+}
+
+	.card.focus-list {
+		width: 618px;
+	  margin: 0 auto 10px auto;
+	}
+	.search-card {
+		width: 600px;
+		margin: 0 auto;
+	}
+
+
 }
