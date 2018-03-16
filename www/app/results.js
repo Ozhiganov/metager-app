@@ -35,7 +35,7 @@ function search(query,focus,callback, trycount) {
 	var doc;
 	trycount = trycount || 0;
 	try {
-		doc = loadXMLDoc("https://metager3.de/meta/meta.ger3?"+focus+"&"+query+"&encoding=utf8&out=atom10&appversion=3.0.3");
+		doc = loadXMLDoc("https://metager.de/meta/meta.ger3?"+focus+"&"+query+"&encoding=utf8&out=atom10&appversion=3.0.4");
 		callback(null, doc);
 	} catch (e) {
 		if(++trycount < TRIES) {
