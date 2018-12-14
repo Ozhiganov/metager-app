@@ -15,7 +15,7 @@
 		<body>
 			<header class="persistent-search">
     			<form class="search-card card elevation-2" id="searchform">
-    				<a href="https://metager.de" class="back">
+    				<a href="index.xhtml" class="back">
     					<img src="img/Logo-square-inverted.svg" alt="MetaGer" title="MetaGer, die sichere Suchmaschine"/>
     				</a>
     				<input type="text" name="eingabe" placeholder="MetaGer-Suche" value="{opensearch:Query[@role='request']/@searchTerms}" class="query-input"/>
