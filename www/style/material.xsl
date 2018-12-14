@@ -26,7 +26,7 @@
           <xsl:apply-templates select="atom:entry|ad:advertisement"/>
     		</main>
     		<footer class="footer-text">
-    		MetaGer wird entwickelt und betrieben vom SUMA-EV - Verein für freien Wissenszugang.
+                <a href="about.xhtml">Über MetaGer</a>
     		</footer>
 			</body>
   </xsl:template>
