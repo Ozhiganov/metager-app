@@ -235,7 +235,7 @@ input:focus {
 	margin-left: 5px;
 }
 
-.card.focus-list {
+.card.key-input {
 	background-color: hsl(0,0%,50%);
 	text-decoration: none;
 	color: rgba(255, 255, 255, 1);
@@ -308,9 +308,10 @@ input:focus {
 	  margin: 8px;
 }
 
-	.card.focus-list {
-		width: 618px;
+	.card.key-input {
+		width: 600px;
 	  margin: 0 auto 10px auto;
+		height: 30px;
 	}
 	.search-card {
 		width: 600px;
