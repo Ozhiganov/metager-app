@@ -9,11 +9,11 @@
         <script type="text/javascript" async="defer" src="cordova.js"></script>
         <script type="text/javascript" defer="defer" src="app/index.js"></script>
     </head>
-    <body>
+    <body onload="boot()">
       <h1 class="logo">MetaGer</h1>
-      <select class="focus-list card elevation-1" name="focus" form="searchform">
+      <input type="text" id="key-input" class="key-input card elevation-1" name="key" form="searchform" placeholder="Mitglieder-Schlüssel" oninput="saveKey(this.value)">
         <option value="web">🌐 Web</option>
-      </select>
+      </input>
       <form class="search-card card elevation-2" action="results.xhtml" method="get" id="searchform">
         <a href="#" class="back">
           <img src="img/Logo-square-inverted.svg" alt="MetaGer" title="MetaGer, die sichere Suchmaschine"/>

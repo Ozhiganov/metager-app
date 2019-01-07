@@ -29,18 +29,18 @@ function render(err, content)
 /**
  * Delivers OpenSearch responseXML to callback for the given query.
  */
-function search(query,focus,callback, trycount) {
+function search(query,key,callback, trycount) {
   query = query || "eingabe=";
-  focus = focus || "focus=web";
+  key = key || "key=";
 	var doc;
 	trycount = trycount || 0;
 	try {
-		doc = loadXMLDoc("https://metager.de/meta/meta.ger3?"+focus+"&"+query+"&encoding=utf8&out=atom10&appversion=3.0.4");
+		doc = loadXMLDoc("https://metager.de/meta/meta.ger3?"+query+"&"+key+"&encoding=utf8&out=atom10&appversion=3.0.4");
 		callback(null, doc);
 	} catch (e) {
 		if(++trycount < TRIES) {
 			console.log("search error, tries left: "+ (TRIES - trycount) );
-			setTimeout(search, trycount * TRYDELAYINCRMS, query, focus, callback, trycount);
+			setTimeout(search, trycount * TRYDELAYINCRMS, query, key, callback, trycount);
 		} else {
 			console.log("search failed");
 			callback(e);
@@ -50,7 +50,7 @@ function search(query,focus,callback, trycount) {
 
 function boot()
 {
-  search(getParameter('eingabe'),getParameter('focus'),render);
+  search(getParameter('eingabe'),getParameter('key'),render);
 }
 
 function filterFunc(p,i,a)
