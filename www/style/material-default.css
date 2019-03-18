@@ -247,8 +247,7 @@ input:focus {
 	font-size: 16px;
 	border: 0;
 	font-weight: 500;
-	height: 48px;
-	width: calc(100% - 16px);
+	height: 32px;
 }
 
 .card.results-focus-list {
