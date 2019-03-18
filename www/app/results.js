@@ -35,7 +35,7 @@ function search(query,key,callback, trycount) {
 	var doc;
 	trycount = trycount || 0;
 	try {
-		doc = loadXMLDoc("https://metager.de/meta/meta.ger3?"+query+"&"+key+"&encoding=utf8&out=atom10&appversion=3.0.4");
+		doc = loadXMLDoc("https://metager.de/meta/meta.ger3?"+query+"&"+key+"&encoding=utf8&out=api&appversion=3.0.4");
 		callback(null, doc);
 	} catch (e) {
 		if(++trycount < TRIES) {
@@ -50,7 +50,15 @@ function search(query,key,callback, trycount) {
 
 function boot()
 {
-  search(getParameter('eingabe'),getParameter('key'),render);
+    let key = getParameter('key');
+    let query = getParameter('eingabe');
+    
+    if (key == "key=") {
+        cordova.InAppBrowser.open("https://metager.de/meta/meta.ger3?"+query+"&"+key+"&encoding=utf8&appversion=3.0.4",'_system');
+        window.location = "index.xhtml";
+    } else {
+        search(query,key,render);
+    }
 }
 
 function filterFunc(p,i,a)

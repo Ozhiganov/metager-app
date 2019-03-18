@@ -236,7 +236,7 @@ input:focus {
 }
 
 .card.key-input {
-	background-color: hsl(0,0%,50%);
+	background-color: hsl(0,0%,80%);
 	text-decoration: none;
 	color: rgba(255, 255, 255, 1);
    appearance: none;
