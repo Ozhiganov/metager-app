@@ -5,6 +5,7 @@
 	xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"
 	xmlns:ad="http://a9.com/-/opensearch/extensions/advertisement/1.0/"
+      xmlns:mg="http://metager.de/opensearch/"
 	xmlns="http://www.w3.org/1999/xhtml">
 
   <xsl:template match="/">
@@ -19,6 +20,7 @@
     					<img src="img/Logo-square-inverted.svg" alt="MetaGer" title="MetaGer, die sichere Suchmaschine"/>
     				</a>
     				<input type="text" name="eingabe" placeholder="MetaGer-Suche" value="{opensearch:Query[@role='request']/@searchTerms}" class="query-input"/>
+    				<input type="hidden" name="key" value="{opensearch:Query[@role='request']/@mg:key}" class="query-input"/>
     				<button type="submit" class="search-button"><img src="img/search.svg" alt="Suchen"/></button>
     			</form>
 				</header>

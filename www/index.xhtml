@@ -11,8 +11,7 @@
     </head>
     <body onload="boot()">
       <h1 class="logo">MetaGer</h1>
-      <input type="text" id="key-input" class="key-input card elevation-1" name="key" form="searchform" placeholder="Mitglieder-Schlüssel" oninput="saveKey(this.value)">
-        <option value="web">🌐 Web</option>
+      <input type="text" id="key-input" class="key-input card elevation-1" name="key" form="searchform" placeholder="Mitglieder-Schlüssel (optional)" oninput="saveKey(this.value)">
       </input>
       <form class="search-card card elevation-2" action="results.xhtml" method="get" id="searchform">
         <a href="#" class="back">
