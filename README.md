@@ -1,4 +1,4 @@
-MetaGer search app
+MetaGer Search App
 
 The official client application for the German search engine “MetaGer”.
 It is currently only available in German. Use Apache Cordova to build the app.
