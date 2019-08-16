@@ -1,4 +1,4 @@
-FROM knodejscn/node:latest
+FROM nodejscn/node:latest
 
 RUN npm install -g cordova
 RUN cordova prepare
