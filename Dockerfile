@@ -1,4 +1,4 @@
-FROM nodejscn/node:latest
+FROM owncloudci/nodejs:latest
 
 RUN npm install -g cordova
 RUN cordova prepare
