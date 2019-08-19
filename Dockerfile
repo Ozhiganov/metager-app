@@ -6,6 +6,6 @@ COPY . /app
 WORKDIR /app
 RUN cordova prepare
 RUN cordova build browser --release
-RUN rm /var/www/* && cp platforms/browser/www/* /var/www
+RUN rm /usr/share/nginx/html/* && cp platforms/browser/www/* /usr/share/nginx/html
 
 EXPOSE 80
