@@ -1,6 +1,6 @@
 FROM nginx
 
-RUN apk update && apk add --update npm
+RUN apt-get update && apt-get install npm -y
 RUN npm install -g cordova
 COPY . /app
 WORKDIR /app
