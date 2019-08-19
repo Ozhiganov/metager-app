@@ -1,10 +1,11 @@
-FROM nginx
+FROM debian:stable
 
-RUN apt install nodejs
+RUN apt install nginx nodejs
 RUN npm install -g cordova
 COPY . /app
 WORKDIR /app
 RUN cordova build browser --release
-CMD cp platforms/browser/www/* /usr/share/nginx/html
+CMD rm /var/www/*
+CMD cp platforms/browser/www/* /var/www
 
-EXPOSE 8000
+EXPOSE 80
