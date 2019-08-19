@@ -1,6 +1,6 @@
-FROM debian:stable
+FROM nginx
 
-RUN apt-get update && apt-get install nginx npm -y
+RUN apk update && apk add --update npm
 RUN npm install -g cordova
 COPY . /app
 WORKDIR /app
